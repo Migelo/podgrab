@@ -1,12 +1,5 @@
 name: ci
 
-on:
-  push:
-    tags:
-      - 'v*'
-    branches:
-      - master
-
 jobs:
   multi:
     runs-on: ubuntu-latest
