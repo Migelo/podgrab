@@ -12,6 +12,10 @@
   },
   "platformAutomerge": true,
   "prConcurrentLimit": 1,
+  "postUpdateOptions": [
+    "gomodUpdateImportPaths",
+    "gomodTidy"
+  ],
   "packageRules": [
     {
       "description": "Automerge non-major updates",
