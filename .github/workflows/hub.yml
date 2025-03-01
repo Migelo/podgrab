@@ -46,6 +46,7 @@ jobs:
       - name: Update Go version in go.mod
         run: |
           sed -i "s/go [0-9.]\+/go ${{ env.GO_VERSION }}/" go.mod
+          cat go.mod
 
       - name: Build and push
         uses: docker/build-push-action@v6
