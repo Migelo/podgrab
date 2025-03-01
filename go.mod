@@ -1,6 +1,6 @@
 module github.com/akhilrex/podgrab
 
-go 1.15
+go ${GO_VERSION}
 
 require (
 	github.com/TheHippo/podcastindex v1.0.0
