@@ -14,7 +14,7 @@ RUN go mod download
 # Copy source code after dependencies are installed
 COPY . .
 # Add build flags for smaller, more secure binary
-RUN CGO_ENABLED=0 go build -ldflags="-s -w" -o ./app ./main.go
+RUN go build -ldflags="-s -w" -o ./app ./main.go
 
 # Use a smaller base image for the runtime container
 FROM alpine:3.21
