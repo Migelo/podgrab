@@ -33,12 +33,15 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Load environment variables from .env
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2.3.0
+        with:
+          path: ./
+          load-mode: strict
+
+      - name: Some other action
         run: |
-          echo "Loading .env file"
-          set -a
-          . ./.env
-          set +a
+          echo "Variable GO_VERSION: ${{ env.GO_VERSION }}"
 
       - name: Build and push
         uses: docker/build-push-action@v6
@@ -50,3 +53,5 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           tags: ${{ steps.meta.outputs.tags }}
+          build-args: |
+            GO_VERSION=${{ env.GO_VERSION }}
