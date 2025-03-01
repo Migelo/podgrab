@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Migelo/podgrab/db"
+	"github.com/Migelo/podgrab/model"
 	"github.com/TheHippo/podcastindex"
-	"github.com/akhilrex/podgrab/db"
-	"github.com/akhilrex/podgrab/model"
 	"github.com/antchfx/xmlquery"
 	strip "github.com/grokify/html-strip-tags-go"
 	"go.uber.org/zap"

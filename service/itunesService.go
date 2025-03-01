@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/url"
 
+	"github.com/Migelo/podgrab/model"
 	"github.com/TheHippo/podcastindex"
-	"github.com/akhilrex/podgrab/model"
 )
 
 type SearchService interface {
