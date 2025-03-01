@@ -1,6 +1,6 @@
 module github.com/migelo/podgrab
 
-go ${GO_VERSION}
+go GO_VERSION
 
 require (
 	github.com/TheHippo/podcastindex v1.0.0
