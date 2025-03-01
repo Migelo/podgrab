@@ -1,13 +1,14 @@
 package db
 
 import (
+	"log"
 	"time"
 
-	uuid "github.com/satori/go.uuid"
+	uuid "github.com/gofrs/uuid/v5"
 	"gorm.io/gorm"
 )
 
-//Base is
+// Base is
 type Base struct {
 	ID        string `sql:"type:uuid;primary_key"`
 	CreatedAt time.Time
@@ -15,8 +16,12 @@ type Base struct {
 	DeletedAt *time.Time `gorm:"index"`
 }
 
-//BeforeCreate
+// BeforeCreate
 func (base *Base) BeforeCreate(tx *gorm.DB) error {
-	tx.Statement.SetColumn("ID", uuid.NewV4().String())
+	u2, err := uuid.NewV4()
+	if err != nil {
+		log.Fatalf("failed to generate UUID: %v", err)
+	}
+	tx.Statement.SetColumn("ID", u2.String())
 	return nil
 }
