@@ -39,9 +39,13 @@ jobs:
           path: ./
           load-mode: strict
 
-      - name: Some other action
+      - name: Print env vars
         run: |
           echo "Variable GO_VERSION: ${{ env.GO_VERSION }}"
+
+      - name: Update Go version in go.mod
+        run: |
+          sed -i "s/go [0-9.]\+/go ${{ env.GO_VERSION }}/" go.mod
 
       - name: Build and push
         uses: docker/build-push-action@v6

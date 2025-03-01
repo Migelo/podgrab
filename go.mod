@@ -1,4 +1,4 @@
-module github.com/akhilrex/podgrab
+module github.com/migelo/podgrab
 
 go ${GO_VERSION}
 
