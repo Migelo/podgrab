@@ -16,7 +16,7 @@ RUN go build -o ./app ./main.go
 
 FROM alpine:latest
 
-LABEL org.opencontainers.image.source="https://github.com/akhilrex/podgrab"
+LABEL org.opencontainers.image.source="https://github.com/migelo/podgrab"
 
 ENV CONFIG=/config
 ENV DATA=/assets
