@@ -8,7 +8,7 @@ require (
 	github.com/gin-contrib/location v1.0.2
 	github.com/gin-gonic/gin v1.10.0
 	github.com/gobeam/stringy v0.0.7
-	github.com/gofrs/uuid/v5 v5.3.1
+	github.com/gofrs/uuid/v5 v5.3.2
 	github.com/gorilla/websocket v1.5.3
 	github.com/grokify/html-strip-tags-go v0.1.0
 	github.com/jasonlvhit/gocron v0.0.1
