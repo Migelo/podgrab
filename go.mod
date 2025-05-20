@@ -6,7 +6,7 @@ require (
 	github.com/TheHippo/podcastindex v1.0.0
 	github.com/antchfx/xmlquery v1.4.4
 	github.com/gin-contrib/location v1.0.3
-	github.com/gin-gonic/gin v1.10.0
+	github.com/gin-gonic/gin v1.10.1
 	github.com/gobeam/stringy v0.0.7
 	github.com/gofrs/uuid/v5 v5.3.2
 	github.com/gorilla/websocket v1.5.3
