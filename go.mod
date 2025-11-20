@@ -13,7 +13,7 @@ require (
 	github.com/grokify/html-strip-tags-go v0.1.0
 	github.com/jasonlvhit/gocron v0.0.1
 	github.com/joho/godotenv v1.5.1
-	go.uber.org/zap v1.27.0
+	go.uber.org/zap v1.27.1
 	golang.org/x/net v0.43.0
 	gorm.io/driver/sqlite v1.6.0
 	gorm.io/gorm v1.30.1
