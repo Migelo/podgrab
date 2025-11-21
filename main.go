@@ -12,7 +12,7 @@ import (
 	"github.com/Migelo/podgrab/controllers"
 	"github.com/Migelo/podgrab/db"
 	"github.com/Migelo/podgrab/service"
-	"github.com/gin-contrib/location"
+	"github.com/gin-contrib/location/v2"
 	"github.com/gin-gonic/gin"
 	"github.com/jasonlvhit/gocron"
 	_ "github.com/joho/godotenv/autoload"
