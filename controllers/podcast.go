@@ -11,6 +11,7 @@ import (
 	"github.com/Migelo/podgrab/model"
 	"github.com/Migelo/podgrab/service"
 	"github.com/gin-contrib/location"
+	"github.com/h2non/filetype"
 
 	"github.com/Migelo/podgrab/db"
 	"github.com/gin-gonic/gin"
@@ -301,16 +302,24 @@ func GetPodcastItemFileById(c *gin.Context) {
 }
 
 func GetFileContentType(filePath string) string {
-	file, err := os.Open(filePath)
-	if err != nil {
-		return "application/octet-stream"
-	}
-	defer file.Close()
-	buffer := make([]byte, 512)
-	if _, err := file.Read(buffer); err != nil {
-		return "application/octet-stream"
-	}
-	return http.DetectContentType(buffer)
+        file, err := os.Open(filePath)
+        if err != nil {
+                fmt.Printf("failed to open %s, err: %v", filePath, err)
+                return "application/octet-stream"
+        }
+        defer file.Close()
+        buffer := make([]byte, 512)
+        _, err = file.Read(buffer);
+        if err != nil {
+                fmt.Printf("failed to read %s, err: %v", filePath, err)
+                return "application/octet-stream"
+        }
+        kind, err := filetype.Match(buffer)
+        if err != nil {
+                fmt.Printf("failed to match %s, err: %v", filePath, err)
+        }
+        return kind.MIME.Value
+        
 }
 
 func MarkPodcastItemAsUnplayed(c *gin.Context) {
