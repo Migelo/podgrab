@@ -17,7 +17,7 @@ COPY . .
 RUN go build -ldflags="-s -w" -o ./app ./main.go
 
 # Use a smaller base image for the runtime container
-FROM alpine:3.22
+FROM alpine:3.23
 
 # Set all ENVs together for better readability
 ENV CONFIG=/config \
